@@ -4,5 +4,5 @@ splitSpec: true
 codeSamples: true
 swaggerUI: true
 travis: true
-repo: oppiesystems/short-api-docs
+repo: oppiesystems/short-docs
 oasVersion: 3.0.0

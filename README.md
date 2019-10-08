@@ -1,5 +1,5 @@
-# short OpenAPI Specification
-[![Build Status](https://travis-ci.com/oppiesystems/short-api-docs.svg?branch=master)](https://travis-ci.com/oppiesystems/short-api-docs)
+# short API Documentation
+[![Build Status](https://travis-ci.com/oppiesystems/short-docs.svg?branch=master)](https://travis-ci.com/oppiesystems/short-docs)
 ## Steps to finish
 
 1. Enable [Travis](https://docs.travis-ci.com/user/getting-started/#To-get-started-with-Travis-CI%3A) for your repository (**note**: you already have `.travis.yml` file)
@@ -13,9 +13,9 @@
 
 ## Links
 
-- [Reference Documentation (ReDoc)](https://oppiesystems.github.io/short-api-docs/)
-- [SwaggerUI](https://oppiesystems.github.io/short-api-docs/swagger-ui/)
-- OpenAPI Raw Files: [JSON](https://oppiesystems.github.io/short-api-docs/openapi.json) [YAML](https://oppiesystems.github.io/short-api-docs/openapi.yaml)
+- [Reference Documentation (ReDoc)](https://oppiesystems.github.io/short-docs/)
+- [SwaggerUI](https://oppiesystems.github.io/short-docs/swagger-ui/)
+- OpenAPI Raw Files: [JSON](https://oppiesystems.github.io/short-docs/openapi.json) [YAML](https://oppiesystems.github.io/short-docs/openapi.yaml)
 
 **Warning:** All above links are updated only after Travis CI finishes deployment
 

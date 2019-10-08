@@ -1,6 +1,6 @@
 {
-  "name": "short",
-  "version": "1.0.0",
+  "name": "short-docs",
+  "version": "0.0.1",
   "dependencies": {
     "swagger-repo": "^2.0.0-rc.15"
   },
