@@ -1,4 +1,7 @@
 theme:
   colors:
     primary:
-      main: '#32329f'
+      main: '#242424'
+      light: '#212121'
+    text:
+      primary: '#242424'

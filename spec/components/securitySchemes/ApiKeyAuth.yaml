@@ -1,0 +1,5 @@
+type: apiKey
+in: header
+name: X-API-KEY
+description:
+  Using the `apiKey` associated with your account, set the `X-API-KEY` header in the request to its value.

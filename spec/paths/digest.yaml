@@ -1,0 +1,22 @@
+post:
+  tags:
+    - Condense Content
+  summary: digest
+  description: Summarizes content provided to it.
+  operationId: postDigest
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/responses/DigestResponse'
+    '401':
+      $ref: '#/components/responses/UnauthorizedErrorResponse'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/requestBodies/DigestRequest'
+    description: Parameters for shortening of strings
+    required: true
