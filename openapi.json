@@ -7,7 +7,8 @@
       "email": "info@oppie.io"
     },
     "x-logo": {
-      "url": "assets/img/oppie-logo.png"
+      "url": "assets/img/oppie-logo.png",
+      "href": "https://short.oppie.io"
     },
     "description": "Domain-specific content summarization.\n# Overview\nIntegrate in a snap with a **production-grade** content summarizer.\n\nPowered by machine learning, **short** implements a model trained via [unsupervised learning using sentence embeddings](https://www.cs.utexas.edu/~asaran/reports/summarization.pdf) and tailored for particular use cases.\n## Release Warning*\nThe following documentation and subsequent API is __subject to change__ as the service is currently in an `alpha` state.\n## API Host\nAll requests are made to the following root URL with the `/api` prefix.\n\n`https://short.oppie.io/api`\n"
   },
@@ -52,7 +53,14 @@
             }
           },
           "401": {
-            "$ref": "#/components/schemas/UnauthorizedErrorResponse"
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedErrorResponse"
+                }
+              }
+            }
           }
         },
         "requestBody": {
@@ -69,7 +77,7 @@
         "x-code-samples": [
           {
             "lang": "JavaScript",
-            "source": "const API_KEY = '{apiKey}';\n\ntry {\n  const req = await fetch('https://short.oppie.io/api/digest', {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json',\n      'Authorization': `Basic ${API_KEY}`\n    },\n    body: JSON.stringify({\n      content: `Enlightenment is man's emergence from his self-imposed nonage. Nonage is the inability to use one's own understanding without another's guidance. This nonage is self-imposed if its cause lies not in lack of understanding but in indecision and lack of courage to use one's own mind without another's guidance. Dare to know! (Sapere aude.) \"Have the courage to use your own understanding,\" is therefore the motto of the enlightenment.`\n    })\n  });\n\n  const resBody = await req.json();\n\n  console.log(resBody);\n} catch (err) {\n  console.error(err);\n}"
+            "source": "const API_KEY = '{apiKey}';\n\ntry {\n  const req = await fetch('https://short.oppie.io/api/digest', {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json',\n      'X-API-KEY': API_KEY\n    },\n    body: JSON.stringify({\n      content: `Enlightenment is man's emergence from his self-imposed nonage. Nonage is the inability to use one's own understanding without another's guidance. This nonage is self-imposed if its cause lies not in lack of understanding but in indecision and lack of courage to use one's own mind without another's guidance. Dare to know! (Sapere aude.) \"Have the courage to use your own understanding,\" is therefore the motto of the enlightenment.`\n    })\n  });\n\n  const resBody = await req.json();\n\n  console.log(resBody);\n} catch (err) {\n  console.error(err);\n}"
           }
         ]
       }
@@ -117,7 +125,14 @@
         "example": "Enlightenment is man's emergence from his self-imposed nonage. Nonage is the inability to use one's own understanding without another's guidance. This nonage is self-imposed if its cause lies not in lack of understanding but in indecision and lack of courage to use one's own mind without another's guidance. Dare to know! (Sapere aude.) \"Have the courage to use your own understanding,\" is therefore the motto of the enlightenment."
       },
       "UnauthorizedErrorResponse": {
-        "description": "Authentication information is missing or invalid"
+        "type": "object",
+        "properties": {
+          "message": {
+            "description": "Authentication information is missing or invalid",
+            "type": "string",
+            "example": "Unauthorized"
+          }
+        }
       }
     },
     "securitySchemes": {

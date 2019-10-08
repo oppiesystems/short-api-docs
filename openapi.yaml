@@ -6,6 +6,7 @@ info:
     email: info@oppie.io
   x-logo:
     url: assets/img/oppie-logo.png
+    href: 'https://short.oppie.io'
   description: |
     Domain-specific content summarization.
     # Overview
@@ -44,7 +45,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/DigestResponse'
         '401':
-          $ref: '#/components/schemas/UnauthorizedErrorResponse'
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedErrorResponse'
       requestBody:
         content:
           application/json:
@@ -62,7 +67,7 @@ paths:
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
-                  'Authorization': `Basic ${API_KEY}`
+                  'X-API-KEY': API_KEY
                 },
                 body: JSON.stringify({
                   content: `Enlightenment is man's emergence from his self-imposed nonage. Nonage is the inability to use one's own understanding without another's guidance. This nonage is self-imposed if its cause lies not in lack of understanding but in indecision and lack of courage to use one's own mind without another's guidance. Dare to know! (Sapere aude.) "Have the courage to use your own understanding," is therefore the motto of the enlightenment.`
@@ -107,7 +112,12 @@ components:
       minLength: 100
       example: 'Enlightenment is man''s emergence from his self-imposed nonage. Nonage is the inability to use one''s own understanding without another''s guidance. This nonage is self-imposed if its cause lies not in lack of understanding but in indecision and lack of courage to use one''s own mind without another''s guidance. Dare to know! (Sapere aude.) "Have the courage to use your own understanding," is therefore the motto of the enlightenment.'
     UnauthorizedErrorResponse:
-      description: Authentication information is missing or invalid
+      type: object
+      properties:
+        message:
+          description: Authentication information is missing or invalid
+          type: string
+          example: Unauthorized
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
