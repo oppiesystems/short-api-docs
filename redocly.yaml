@@ -1,0 +1,8 @@
+
+apiTitle: short
+splitSpec: true
+codeSamples: true
+swaggerUI: true
+travis: true
+repo: oppiesystems/short-api-docs
+oasVersion: 3.0.0
