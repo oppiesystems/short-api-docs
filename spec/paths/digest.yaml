@@ -10,13 +10,13 @@ post:
       content:
         application/json:
           schema:
-            $ref: '#/components/responses/DigestResponse'
+            $ref: '#/components/schemas/DigestResponse'
     '401':
-      $ref: '#/components/responses/UnauthorizedErrorResponse'
+      $ref: '#/components/schemas/UnauthorizedErrorResponse'
   requestBody:
     content:
       application/json:
         schema:
-          $ref: '#/components/requestBodies/DigestRequest'
+          $ref: '#/components/schemas/DigestRequest'
     description: Parameters for shortening of strings
     required: true

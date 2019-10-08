@@ -7,15 +7,13 @@ properties:
       Nonage is the inability to use one's own understanding without another's guidance. Dare to know! (Sapere aude.)
   inputLength: 
     description: Character length of the `content` input
-    type: integer
-    format: int32
+    type: number
     example: 432
   outputLength: 
     description: Character length of the `digest` output
-    type: integer
-    format: int32
+    type: number
     example: 111
   reduction: 
     description: Fraction of the original character length after condensing
-    type: float
+    type: number
     example: 0.7430555555555556
