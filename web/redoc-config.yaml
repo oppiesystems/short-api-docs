@@ -1,3 +1,5 @@
+hideDownloadButton: true
+hideLoading: true
 theme:
   colors:
     primary:

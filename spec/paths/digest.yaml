@@ -12,7 +12,11 @@ post:
           schema:
             $ref: '#/components/schemas/DigestResponse'
     '401':
-      $ref: '#/components/schemas/UnauthorizedErrorResponse'
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UnauthorizedErrorResponse'
   requestBody:
     content:
       application/json:

@@ -1,1 +1,6 @@
-description: Authentication information is missing or invalid
+type: object
+properties:
+  message:
+    description: Authentication information is missing or invalid
+    type: string
+    example: Unauthorized
