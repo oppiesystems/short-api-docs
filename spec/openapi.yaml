@@ -6,6 +6,7 @@ info:
     email: info@oppie.io
   x-logo:
     url: 'assets/img/oppie-logo.png'
+    href: 'https://short.oppie.io'
   description: >
     Domain-specific content summarization.
 
